@@ -1,0 +1,469 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/background_dark"
+    tools:context="edu.tamuc.secqrscanner.UserEdActivity">
+
+
+    <Button
+        android:id="@+id/go_home_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:background="@drawable/button_round"
+        android:text="@string/go_back_home_string"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Widget.Button.Colored"
+        android:textColor="#FF4B00"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="@+id/guideline_start"
+        app:layout_constraintRight_toLeftOf="@+id/guideline_end"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintHorizontal_bias="0.0" />
+
+    <android.support.constraint.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/guideline_start"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteY="0dp"
+        tools:layout_editor_absoluteX="match_parentdp"
+        app:layout_constraintGuide_percent="0.33" />
+
+    <android.support.constraint.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/guideline_end"
+        app:layout_constraintGuide_percent="0.67"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteY="0dp"
+        tools:layout_editor_absoluteX="match_parent" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline_scroll_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.1" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline_scroll_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.9" />
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="24dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/go_home_button"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintLeft_toRightOf="@+id/guideline_scroll_start"
+        app:layout_constraintRight_toLeftOf="@+id/guideline_scroll_end"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5">
+
+        <LinearLayout
+            android:id="@+id/scroll_layout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/phish_comic_img"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:adjustViewBounds="true"
+                android:cropToPadding="true"
+                android:paddingBottom="16dp"
+                android:paddingLeft="32dp"
+                android:paddingRight="32dp"
+                android:paddingTop="16dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/bad_qr_comic_rezised"
+                android:contentDescription="@string/phishing_prevention_comic_strip_string" />
+
+            <TextView
+                android:id="@+id/phish_user_ed_heading"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="8dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:text="@string/phishing_attacks_heading_string"
+                android:textAllCaps="false"
+                android:textAppearance="@android:style/TextAppearance.Medium.Inverse"
+                android:textColor="@color/OrangeAccent"
+                android:textStyle="bold|italic" />
+
+            <TextView
+                android:id="@+id/phish_user_ed_body"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="16dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:text="@string/phishing_body_string"
+                android:textAppearance="@android:style/TextAppearance.Small.Inverse"
+                android:textColor="@color/colorPrimary" />
+
+            <ImageView
+                android:id="@+id/malware_comic_img"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:adjustViewBounds="true"
+                android:cropToPadding="true"
+                android:paddingBottom="16dp"
+                android:paddingLeft="32dp"
+                android:paddingRight="32dp"
+                android:paddingTop="16dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/malware_qr_comic_resized"
+                android:contentDescription="@string/malware_prevention_comic_strip" />
+
+            <TextView
+                android:id="@+id/malware_user_ed_heading"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="8dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:text="@string/malware_attacks_heading_string"
+                android:textAllCaps="false"
+                android:textAppearance="@android:style/TextAppearance.Medium.Inverse"
+                android:textColor="@color/OrangeAccent"
+                android:textStyle="bold|italic" />
+
+            <TextView
+                android:id="@+id/malware_user_ed_body"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="24dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:text="@string/malware_body_string"
+                android:textAppearance="@android:style/TextAppearance.Small.Inverse"
+                android:textColor="@color/colorPrimary" />
+
+            <View
+                android:id="@+id/text_separator"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/BlueAccent" />
+
+            <TextView
+                android:id="@+id/user_ed_tips_heading"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="8dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:paddingTop="16dp"
+                android:text="@string/tips_and_tricks_heading_string"
+                android:textAllCaps="false"
+                android:textAppearance="@android:style/TextAppearance.Medium.Inverse"
+                android:textColor="@color/OrangeAccent"
+                android:textStyle="bold|italic" />
+
+
+            <ImageView
+                android:id="@+id/stickers_commic1_img"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:adjustViewBounds="true"
+                android:cropToPadding="true"
+                android:paddingBottom="16dp"
+                android:paddingLeft="32dp"
+                android:paddingRight="32dp"
+                android:paddingTop="16dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/stickers_comic1"
+                android:contentDescription="@string/stickers_img1_string" />
+
+
+            <ImageView
+                android:id="@+id/stickers_comic2_img"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:adjustViewBounds="true"
+                android:cropToPadding="true"
+                android:paddingBottom="16dp"
+                android:paddingLeft="32dp"
+                android:paddingRight="32dp"
+                android:paddingTop="16dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/stickers_comic2"
+                android:contentDescription="@string/stickers_img2_string" />
+
+
+            <TextView
+                android:id="@+id/tips_subheading"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="8dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:paddingTop="16dp"
+                android:text="@string/tips_subheading_string"
+                android:textAllCaps="false"
+                android:textAppearance="@android:style/TextAppearance.Small.Inverse"
+                android:textColor="@color/OrangeAccent"
+                android:textStyle="italic" />
+
+            <TextView
+                android:id="@+id/tips_body_bullet1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="24dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:text="@string/tips_string1"
+                android:textAppearance="@android:style/TextAppearance.Small.Inverse"
+                android:textColor="@color/colorPrimary" />
+
+            <TextView
+                android:id="@+id/tips_body_bullet2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="24dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:text="@string/tips_string2"
+                android:textAppearance="@android:style/TextAppearance.Small.Inverse"
+                android:textColor="@color/colorPrimary" />
+
+            <TextView
+                android:id="@+id/tips_body_bullet3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="24dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:text="@string/tips_string3"
+                android:textAppearance="@android:style/TextAppearance.Small.Inverse"
+                android:textColor="@color/colorPrimary" />
+
+            <TextView
+                android:id="@+id/tips_body_bullet4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="24dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:text="@string/tips_string4"
+                android:textAppearance="@android:style/TextAppearance.Small.Inverse"
+                android:textColor="@color/colorPrimary" />
+
+            <TextView
+                android:id="@+id/tips_body_bullet5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="24dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:text="@string/tips_string5"
+                android:textAppearance="@android:style/TextAppearance.Small.Inverse"
+                android:textColor="@color/colorPrimary" />
+
+            <TextView
+                android:id="@+id/tips_body_bullet6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="24dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:text="@string/tips_string6"
+                android:textAppearance="@android:style/TextAppearance.Small.Inverse"
+                android:textColor="@color/colorPrimary" />
+
+            <TextView
+                android:id="@+id/tips_body_bullet7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="24dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:text="@string/tips_string7"
+                android:textAppearance="@android:style/TextAppearance.Small.Inverse"
+                android:textColor="@color/colorPrimary" />
+
+
+            <ImageView
+                android:id="@+id/mispelled_url_comic_img"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:adjustViewBounds="true"
+                android:cropToPadding="true"
+                android:paddingBottom="24dp"
+                android:paddingLeft="32dp"
+                android:paddingRight="32dp"
+                android:paddingTop="16dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/mispelled_url_comic"
+                android:contentDescription="@string/mispelled_comic_string" />
+
+
+            <View
+                android:id="@+id/text_seperator2"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/BlueAccent" />
+
+            <TextView
+                android:id="@+id/links_heading"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="8dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:paddingTop="16dp"
+                android:text="@string/links_heading_string"
+                android:textAllCaps="false"
+                android:textAppearance="@android:style/TextAppearance.Medium.Inverse"
+                android:textColor="@color/OrangeAccent"
+                android:textStyle="bold|italic" />
+
+            <TextView
+                android:id="@+id/links_body1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="4dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:text="@string/prevent_phishing_info_link_string"
+                android:textAppearance="@android:style/TextAppearance.Small.Inverse"
+                android:textColor="@color/colorPrimary" />
+
+            <TextView
+                android:id="@+id/links_body1_hypertext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autoLink="web"
+                android:paddingBottom="24dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:text="http://www.antiphishing.org/"
+                android:textAppearance="@android:style/TextAppearance.Small.Inverse"
+                android:textColor="@color/colorPrimary" />
+
+            <TextView
+                android:id="@+id/links_body2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="4dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:text="@string/prevent_malware_info_link_string"
+                android:textAppearance="@android:style/TextAppearance.Small.Inverse"
+                android:textColor="@color/colorPrimary" />
+
+            <TextView
+                android:id="@+id/links_body2_hypertext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autoLink="web"
+                android:paddingBottom="24dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:text="http://www.stopbadware.org/"
+                android:textAppearance="@android:style/TextAppearance.Small.Inverse"
+                android:textColor="@color/colorPrimary" />
+
+            <TextView
+                android:id="@+id/links_body3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="4dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:text="@string/report_phishing_link_string"
+                android:textAppearance="@android:style/TextAppearance.Small.Inverse"
+                android:textColor="@color/colorPrimary" />
+
+            <TextView
+                android:id="@+id/links_body3_hypertext1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autoLink="web"
+                android:paddingBottom="8dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:text="https://safebrowsing.google.com/safebrowsing/report_phish/"
+                android:textAppearance="@android:style/TextAppearance.Small.Inverse"
+                android:textColor="@color/colorPrimary" />
+
+            <TextView
+                android:id="@+id/links_body3_hypertext2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autoLink="web"
+                android:paddingBottom="24dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:text="https://www.phishtank.com/add_web_phish.php"
+                android:textAppearance="@android:style/TextAppearance.Small.Inverse"
+                android:textColor="@color/colorPrimary" />
+
+            <TextView
+                android:id="@+id/links_body4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="4dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:text="@string/report_malware_link_string"
+                android:textAppearance="@android:style/TextAppearance.Small.Inverse"
+                android:textColor="@color/colorPrimary" />
+
+            <TextView
+                android:id="@+id/links_body4_hypertext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autoLink="web"
+                android:paddingBottom="24dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:text="https://safebrowsing.google.com/safebrowsing/report_badware/"
+                android:textAppearance="@android:style/TextAppearance.Small.Inverse"
+                android:textColor="@color/colorPrimary" />
+
+            <View
+                android:id="@+id/text_seperator3"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/BlueAccent" />
+
+
+            <ImageView
+                android:id="@+id/phishing_strategy_comic_img"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:adjustViewBounds="true"
+                
+                android:scaleType="centerCrop"
+                android:src="@drawable/phishing_comic_pw"
+                android:contentDescription="@string/pw_comic_string" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</android.support.constraint.ConstraintLayout>

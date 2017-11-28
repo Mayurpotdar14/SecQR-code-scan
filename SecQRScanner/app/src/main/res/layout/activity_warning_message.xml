@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/warning_message"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/RED"
+    tools:context="edu.tamuc.secqrscanner.MessageActivity">
+
+
+    <ImageView
+        android:id="@+id/warning_image"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_weight="1"
+        android:contentDescription="@string/warning_icon"
+        android:src="@drawable/warning_icon"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineHeadingEnd"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/guidelineHeadingSep"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/warning_icon" />
+
+    <TextView
+        android:id="@+id/heading_field"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_weight="1"
+        android:gravity="center_vertical"
+        android:text="WARNING: Warning Message Heading Here!"
+        android:textAllCaps="false"
+        android:textColor="@color/WarningText"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineHeadingEnd"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintLeft_toLeftOf="@+id/guidelineHeadingSep"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/learn_more_button"
+        app:layout_constraintLeft_toLeftOf="@+id/guidelineBodyStart"
+        app:layout_constraintRight_toLeftOf="@+id/guidelineBodyEnd"
+        app:layout_constraintTop_toTopOf="@+id/guidelineHeadingEnd">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/message_body"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="179dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="32dp"
+                android:gravity="center_vertical|center_horizontal"
+                android:text="@string/warning_message_description"
+                android:textAlignment="viewStart"
+                android:textAllCaps="false"
+                android:textColor="@color/WarningText"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toTopOf="@+id/learn_more_button"
+                app:layout_constraintLeft_toLeftOf="@+id/guidelineBodyStart"
+                app:layout_constraintRight_toLeftOf="@+id/guidelineBodyEnd"
+                app:layout_constraintTop_toBottomOf="@+id/heading_field"
+                tools:layout_constraintBottom_creator="1"
+                tools:layout_constraintLeft_creator="1"
+                tools:layout_constraintRight_creator="1"
+                tools:layout_constraintTop_creator="1" />
+        </LinearLayout>
+    </ScrollView>
+
+    <ImageButton
+        android:id="@+id/learn_more_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:background="@android:color/transparent"
+        android:contentDescription="@string/learn_more_button"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/get_me_out_button"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:srcCompat="@drawable/find_out_more"
+        android:src="@drawable/find_out_more"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintLeft_creator="1" />
+
+    <Button
+        android:id="@+id/get_me_out_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:background="@drawable/getmeout"
+
+        android:text="@string/get_me_out"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/cont_anyways_link"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintHorizontal_bias="0.5" />
+
+    <TextView
+        android:id="@+id/cont_anyways_link"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginStart="16dp"
+        android:clickable="true"
+        android:text="@string/go_to_the_website_anyways_not_recommended"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="@color/WarningText"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintRight_creator="1" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guidelineHeadingSep"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.3"
+        tools:layout_editor_absoluteY="0dp"
+        tools:layout_editor_absoluteX="123dp" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guidelineBodyStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.1"
+        tools:layout_editor_absoluteY="0dp"
+        tools:layout_editor_absoluteX="41dp" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guidelineBodyEnd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.9"
+        tools:layout_editor_absoluteY="0dp"
+        tools:layout_editor_absoluteX="370dp" />
+
+    <android.support.constraint.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/guidelineHeadingEnd"
+        app:layout_constraintGuide_percent="0.2"
+        android:orientation="horizontal"
+        tools:layout_editor_absoluteY="120dp"
+        tools:layout_editor_absoluteX="0dp" />
+
+</android.support.constraint.ConstraintLayout>
